@@ -14,11 +14,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\BOSS\\Desktop\\까마귀\\ConsoleGAME\\ConsoleGAME\\ConsoleGAME.csproj",
+      "projectUniqueName": "C:\\Users\\BOSS\\Desktop\\까마귀\\C-sharp-lecture\\ConsoleGAME\\ConsoleGAME\\ConsoleGAME.csproj",
       "projectName": "ConsoleGAME",
-      "projectPath": "C:\\Users\\BOSS\\Desktop\\까마귀\\ConsoleGAME\\ConsoleGAME\\ConsoleGAME.csproj",
+      "projectPath": "C:\\Users\\BOSS\\Desktop\\까마귀\\C-sharp-lecture\\ConsoleGAME\\ConsoleGAME\\ConsoleGAME.csproj",
       "packagesPath": "C:\\Users\\BOSS\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\BOSS\\Desktop\\까마귀\\ConsoleGAME\\ConsoleGAME\\obj\\",
+      "outputPath": "C:\\Users\\BOSS\\Desktop\\까마귀\\C-sharp-lecture\\ConsoleGAME\\ConsoleGAME\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"

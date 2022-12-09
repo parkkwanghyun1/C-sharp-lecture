@@ -5,35 +5,81 @@ namespace ConsoleGame
 {
     internal class Program
     {
-        // stacic void main (string [] args)
-        // 프로그램 실행되는 진입점
-        // Main() 함수 안에서 실행해야 프로그램이 실행된다.
+
+        class Monster
+        {
+            //기본 접근 지정자
+            // 필드에서 privater 로 설정된다. 
+
+           public int attack;
+            public string name;
+
+            public void Defense()
+            {
+                Console.WriteLine("방어");
+            }
+        }
+
         static void Main(string[] args)
         {
-            // Console.WriteLine(); <- 문자열을 출력하는 함수
-            // Console.WriteLine에서 문자열을 연결할려면 + 로 연결하면 된다.
+            // 값 타입
+            // 변수의 선언과 동시에 값을 할당할 수 있으며
+            // 스택 메모리에 생성된다
 
-            Console.WriteLine("안녕하세요" + "박광현 입니다");
-            Console.WriteLine("유니티를 배우고 싶습니다");
+            // 메모리 레이아웃 
+            /*
+            // 코드영역 - const , 기게어 , txt 
+            // 컴파일 시점 
 
-            // Console.Write() 함수는 개행을 하지않고, 출력하는 함수
-            //값 타입 
+            // 데이터 영억
+            // 정적 변수와 전역 변수
+            // 프로그램이 실행될 때 단 한번만 초기화가 된다
+            // 프로그램이 종료될 때 메모리에서 해제 된다.
 
-            bool check = true; // 1byte
-            byte bit = 1; // 1byte
-            char alphabet = 'A';  //1byte 
-            short data = 10; // 2byte
-            ushort uData = 22; // 2byte 양수값만 표현할 수 있는 자료형
-            int integer = 300; // 4byte 
-            uint uInteger = 200; // 4byte 양수 값만 표현할 수 있다.
-            long signal = 15; // 4byte
+            // 스택 영역
+            // 매개 변수와 지역 변수
 
-            float sing = 15.5f; // 4byte
-            double count = 176.8; // 8byte
-            decimal value = 3058; // 16byte 
+            //힙 영역
+            // 사용자가 직접 메모리 할당 
+            */
 
-            Console.Write("오우");
-            Console.Write(100);
+            // 참조 타입
+            /*
+            // new 키워드를 사용해서 객체를 초기화한 후 
+            // 힙에 할당된 메모리를 스택에서 참조하여 사용하는 타입이다
+           
+            
+            int value = 10;
+            value = 20;
+
+            string name = "Parkkwanghyun";
+            int []array = new int [5];
+
+            name = "Park";
+
+            array[0] = 10;
+            array[1] = 20;
+            array[2] = 30;
+            array[3] = 40;
+            array[4] = 50;
+
+            Console.WriteLine(value);
+            Console.WriteLine(name);
+
+            Console.WriteLine(array[0]);
+            Console.WriteLine(array[1]);
+            Console.WriteLine(array[2]);
+            Console.WriteLine(array[3]);
+            Console.WriteLine(array[4]);
+          
+        
+            
+            Monster monster = new Monster();
+
+            monster.attack = 10;
+            monster.name = "mondo";
+            monster.Defense();
+            */
         }
     }
 }
