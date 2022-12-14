@@ -1,0 +1,15 @@
+C:\Users\BOSS\Desktop\까마귀\C-sharp-lecture\ConsoleGAME\lecture resorce\bin\Debug\net6.0\lecture resorce.exe
+C:\Users\BOSS\Desktop\까마귀\C-sharp-lecture\ConsoleGAME\lecture resorce\bin\Debug\net6.0\lecture resorce.deps.json
+C:\Users\BOSS\Desktop\까마귀\C-sharp-lecture\ConsoleGAME\lecture resorce\bin\Debug\net6.0\lecture resorce.runtimeconfig.json
+C:\Users\BOSS\Desktop\까마귀\C-sharp-lecture\ConsoleGAME\lecture resorce\bin\Debug\net6.0\lecture resorce.dll
+C:\Users\BOSS\Desktop\까마귀\C-sharp-lecture\ConsoleGAME\lecture resorce\bin\Debug\net6.0\lecture resorce.pdb
+C:\Users\BOSS\Desktop\까마귀\C-sharp-lecture\ConsoleGAME\lecture resorce\obj\Debug\net6.0\lecture resorce.csproj.AssemblyReference.cache
+C:\Users\BOSS\Desktop\까마귀\C-sharp-lecture\ConsoleGAME\lecture resorce\obj\Debug\net6.0\lecture resorce.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\BOSS\Desktop\까마귀\C-sharp-lecture\ConsoleGAME\lecture resorce\obj\Debug\net6.0\lecture resorce.AssemblyInfoInputs.cache
+C:\Users\BOSS\Desktop\까마귀\C-sharp-lecture\ConsoleGAME\lecture resorce\obj\Debug\net6.0\lecture resorce.AssemblyInfo.cs
+C:\Users\BOSS\Desktop\까마귀\C-sharp-lecture\ConsoleGAME\lecture resorce\obj\Debug\net6.0\lecture resorce.csproj.CoreCompileInputs.cache
+C:\Users\BOSS\Desktop\까마귀\C-sharp-lecture\ConsoleGAME\lecture resorce\obj\Debug\net6.0\lecture resorce.dll
+C:\Users\BOSS\Desktop\까마귀\C-sharp-lecture\ConsoleGAME\lecture resorce\obj\Debug\net6.0\refint\lecture resorce.dll
+C:\Users\BOSS\Desktop\까마귀\C-sharp-lecture\ConsoleGAME\lecture resorce\obj\Debug\net6.0\lecture resorce.pdb
+C:\Users\BOSS\Desktop\까마귀\C-sharp-lecture\ConsoleGAME\lecture resorce\obj\Debug\net6.0\lecture resorce.genruntimeconfig.cache
+C:\Users\BOSS\Desktop\까마귀\C-sharp-lecture\ConsoleGAME\lecture resorce\obj\Debug\net6.0\ref\lecture resorce.dll
