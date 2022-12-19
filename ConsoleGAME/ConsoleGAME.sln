@@ -9,7 +9,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "lecture resource", "lecture
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "namespace", "namespace\namespace.csproj", "{5BB25A3C-6CDA-4EDD-BC0A-C9318C691636}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "프로퍼티", "프로퍼티\프로퍼티.csproj", "{24FE1A3D-CFD7-45C0-B24D-33E8C8D27572}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "프로퍼티", "프로퍼티\프로퍼티.csproj", "{24FE1A3D-CFD7-45C0-B24D-33E8C8D27572}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Constructer", "생성자\Constructer.csproj", "{34E83201-0232-4D9C-A403-134461A50AF5}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -33,6 +35,10 @@ Global
 		{24FE1A3D-CFD7-45C0-B24D-33E8C8D27572}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{24FE1A3D-CFD7-45C0-B24D-33E8C8D27572}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{24FE1A3D-CFD7-45C0-B24D-33E8C8D27572}.Release|Any CPU.Build.0 = Release|Any CPU
+		{34E83201-0232-4D9C-A403-134461A50AF5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{34E83201-0232-4D9C-A403-134461A50AF5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{34E83201-0232-4D9C-A403-134461A50AF5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{34E83201-0232-4D9C-A403-134461A50AF5}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
