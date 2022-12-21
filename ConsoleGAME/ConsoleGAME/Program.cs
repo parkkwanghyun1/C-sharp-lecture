@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Specialized;
 using System.Data.SqlTypes;
 using System.Globalization;
 using System.Runtime.InteropServices;
@@ -7,105 +8,113 @@ using System.Text;
 
 namespace ConsoleGame
 {
-    // 오버라이딩
-    // 상위 클래스에 있는 메소드를 하위 클래스에서 
-    // 재정의하여 사용하는 기능이다.
+    class Watch
+    {
+        // readonly : 런타임 시점에 결정되는 상수 
+        // 상수를 초기화 하지 않아도 사용할 수 있다.
+        readonly int count = 50;
+
+        public Watch() // 생성자
+        {
+            // 생성자에서 단 한번만 값을 초기화 할 수 있다.
+            count = 100;
+            Console.WriteLine("count의 값 : " + count);
+        }
+
+    }
+
+    // 델리게이트 선언
+    // delegate [반환형] [델리게이트 이름] (매개변수)
+    delegate void Calculator(int x, int y);
+
+    // 델리게이트는 메소드의 반환형과 매개 변수의 타입이 일치해야 한다.
+    class Weapon
+    {
+        public void Stat(int x, int y)
+        {
+            int result = x + y;
+            Console.WriteLine("stat 메소드 " + result);
+        }
+
+        public void Price(int x, int y)
+        {
+            int result = x - y;
+            Console.WriteLine("Price 메소드 " + result);
+        }
+
+        public void Dmage(int x, int y)
+        {
+            int result = x * y;
+            Console.WriteLine("Damage 메소드 " + result);
+        }
+    }
 
     internal class Program
     {
-        // 선택적 매개변수
-        // 기본 값을 가지는 매개 변수이며, 필요에 따라 선택적 매개변수로
-        // 선언된 매개변수는 인수를 전달하지 않아도 된다
-
-        static void Function(int x, int y = 100)
-        {
-            // 선택적 매개변수는 인수를 전달할 때 오니쪽에서부터
-            // 값이 저장되어 지기 때문에 오른쪽에서부터 선택적 매개변수를
-            // 선언해주어야 한다
-            Console.WriteLine("x 의 값 : " + x);
-            Console.WriteLine( "y의 값 : " + y);
-        }
-        
-        // 명명된 매개변수
-        // 매개 변수를 호출할 때 필요한 매개변수 이름을 직접
-        // 지정해서 사용하는 매개 변수이다.
-        static void Information(string name, int age, char blood)
-        {
-            Console.WriteLine("name 의 값 : " + name);
-            Console.WriteLine("age의 값 : " + age);
-            Console.WriteLine("blood 의 값 : " + blood);
-        
-        }
-        class Animal
-        {
-            string name;
-            public void sound()
-            {
-                Console.WriteLine("동물의 울음 소리");
-            }
-
-            //가상 함수
-            // 상속하는 클래스 내에서 같은 형태의 함수로 재정의 될 수 있는
-            // 함수이다.
-
-            virtual public void Action()
-            {
-                Console.WriteLine("동물의 행동");
-            }
-        }
-
-        class Dog : Animal
-        {
-            // 메소드 숨기기
-            // 상위 클래스로부터 상속 받은 멤버와 이름은
-            // 동일 하지만, 완전히 다른 새로운 메소드를 정의할 때 
-            // 사용하는 키워디이다.
-
-           new public void sound()
-            {
-                Console.WriteLine("명 ~ 명 ~ ");
-            }
-
-            // 오버라이딩
-            override public void Action()
-            {
-                Console.WriteLine("강아지의 행동");
-            }
-
-            public void Tracking()
-            {
-                Console.WriteLine("강아지가 추적합니다.");
-            }
-        }
-
+      
         static void Main(string[] args)
         {
-            #region 메소드 숨기기 & 오버라이딩
+            #region 상수
             /*
-            Animal animal = new Animal();
-            animal.Action();
-            animal.sound();
+            // 프로그램이 실행되는 동안 변하지 않는 값 
 
-            Dog dog = new Dog();
-            dog.Action();
-            dog.sound();
+            // const : 컴파일 시점에 결정되는 상수
+            // 상수를 선언과 동시에 초기화를 해주어야 한다.
 
-            Animal parent = new Dog();
+            // pi = 3.14  
+            // gravity = 9.61 과 같이 불변의 값 을 선언 할 때 const 로 
+            // const int dat = 10;
+            // 컴파일 할 때 const 값이 바뀌게 되면 재컴파일 하게 된다.
+            const int value = 10;
 
-            // 런타임 중에 어떤 함수를 불러올지 결정하는 행위
+            Console.WriteLine("value 의 값 : " + value);
 
-            parent.Action();
-            parent.sound();
+            Watch watch = new Watch();
             */
             #endregion
 
-            // 선택적 매개변수 
-            Function(10);
-            Function(50, 500);
+            #region 델리게이트(대리자)
+            /*
+             // 매서드를 대신해서 호출하는 기법이다.
 
-            //명명된 매개변수
-            Information("park", 26, 'O');
-            Information(age: 10, blood: 'a', name: "kwang");
+             Weapon weapon = new Weapon();
+
+             // 델리게이트 정의 
+             Calculator calculator;
+
+             // 델리게이트 변수에 Stat 의 주소를 저장한다.
+             calculator = weapon.Stat;
+
+             calculator(10, 20);
+
+             calculator = weapon.Price;
+
+             calculator(13, 40);
+
+             calculator = weapon.Dmage;
+
+             calculator(13, 40);
+            */
+            #endregion
+
+            //델리게이트 체인
+            // 하나의 델리게이트에 여러 개의 메소드를 연결시키는 기법이다.
+
+            Weapon weapon = new Weapon();
+
+            Calculator calculator;
+
+            // 델리게이트 비어있는 상태에서 메소드를 추가할 수 없다.
+            calculator = weapon.Stat;
+            calculator += weapon.Price;
+            calculator += weapon.Dmage;
+
+            calculator(10, 20);
+
+            calculator -= weapon.Dmage;
+
+            calculator(10, 23);
+
         }
     }
 }
