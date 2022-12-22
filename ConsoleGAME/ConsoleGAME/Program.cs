@@ -2,118 +2,119 @@
 using System.Collections.Specialized;
 using System.Data.SqlTypes;
 using System.Globalization;
+using System.Reflection;
 using System.Runtime.InteropServices;
+using System.Runtime.Intrinsics.X86;
 using System.Security.Cryptography.X509Certificates;
 using System.Text;
 
 namespace ConsoleGame
 {
-    class Watch
+
+    delegate void Delegate();
+
+    class IPhone
     {
-        // readonly : 런타임 시점에 결정되는 상수 
-        // 상수를 초기화 하지 않아도 사용할 수 있다.
-        readonly int count = 50;
+        public int price;
+        public int version;
 
-        public Watch() // 생성자
+        // 얕은 복사 
+        /*
+        public IPhone(int price, int version)
         {
-            // 생성자에서 단 한번만 값을 초기화 할 수 있다.
-            count = 100;
-            Console.WriteLine("count의 값 : " + count);
+            this.price = price;
+            this.version = version;
         }
+        */
 
-    }
+        // 깊은 복사
 
-    // 델리게이트 선언
-    // delegate [반환형] [델리게이트 이름] (매개변수)
-    delegate void Calculator(int x, int y);
-
-    // 델리게이트는 메소드의 반환형과 매개 변수의 타입이 일치해야 한다.
-    class Weapon
-    {
-        public void Stat(int x, int y)
+        public IPhone DeepCopy()
         {
-            int result = x + y;
-            Console.WriteLine("stat 메소드 " + result);
-        }
+            IPhone newIPhone = new IPhone();
+            newIPhone.price = this.price;
+            newIPhone.version = this.version;
 
-        public void Price(int x, int y)
-        {
-            int result = x - y;
-            Console.WriteLine("Price 메소드 " + result);
-        }
-
-        public void Dmage(int x, int y)
-        {
-            int result = x * y;
-            Console.WriteLine("Damage 메소드 " + result);
+            return newIPhone;
         }
     }
-
     internal class Program
     {
       
         static void Main(string[] args)
         {
-            #region 상수
+            #region 무명 형식이란?
             /*
-            // 프로그램이 실행되는 동안 변하지 않는 값 
+            // 이름이 없는 데이터 형식이다.
 
-            // const : 컴파일 시점에 결정되는 상수
-            // 상수를 선언과 동시에 초기화를 해주어야 한다.
+            // 임시 변수가 필요할 때 사용하는 형식이다.
+            // 임시 변수 : 임시로 생성해서 사용 후 , 더 이상 사용되지 않는 변수 
 
-            // pi = 3.14  
-            // gravity = 9.61 과 같이 불변의 값 을 선언 할 때 const 로 
-            // const int dat = 10;
-            // 컴파일 할 때 const 값이 바뀌게 되면 재컴파일 하게 된다.
-            const int value = 10;
+            var temp = new { age = 40, name = "KIM" };
 
-            Console.WriteLine("value 의 값 : " + value);
+            // 무명 형식으로 생성된 인스턴스는 읽기 전용이라 
+            // 값을 변경할 수 없다.
 
-            Watch watch = new Watch();
+            Console.WriteLine("temp 의 age : " + temp.age + " temp의 name : " + temp.name);
             */
             #endregion
 
-            #region 델리게이트(대리자)
+            #region 무명 메소드
             /*
-             // 매서드를 대신해서 호출하는 기법이다.
+            // 단순한 명령어 구문으로 구성된 메소드를 정의하지 않고 
+            // 델리게이트를 사용하여 1회 성으로 사용하는 메소드 이다.
+            Delegate value;
 
-             Weapon weapon = new Weapon();
+            value = () =>
+            {
+                Console.WriteLine("로그인을 실패하였습니다");
+          
+            };
 
-             // 델리게이트 정의 
-             Calculator calculator;
+            value();
 
-             // 델리게이트 변수에 Stat 의 주소를 저장한다.
-             calculator = weapon.Stat;
-
-             calculator(10, 20);
-
-             calculator = weapon.Price;
-
-             calculator(13, 40);
-
-             calculator = weapon.Dmage;
-
-             calculator(13, 40);
             */
             #endregion
 
-            //델리게이트 체인
-            // 하나의 델리게이트에 여러 개의 메소드를 연결시키는 기법이다.
+            #region 얕은 복사
+            /*
+            // 객체를 복사할 때 주소 값을 복사형
+            // 같은 메모리를 가리키는 복사이다
 
-            Weapon weapon = new Weapon();
+            IPhone se1 = new IPhone(20000, 1);
+            IPhone se2 = se1;
 
-            Calculator calculator;
+            se2.version = 2;
+            se2.price = 30000;
 
-            // 델리게이트 비어있는 상태에서 메소드를 추가할 수 없다.
-            calculator = weapon.Stat;
-            calculator += weapon.Price;
-            calculator += weapon.Dmage;
+            Console.WriteLine("se1의 버전은 : " + se1.version);
+            Console.WriteLine("se2의 버전은 : " + se2.version);
 
-            calculator(10, 20);
+            Console.WriteLine("se1의 가격 : " + se1.price);
+            Console.WriteLine("se2의 가격 : " + se2.price);
+            */
+            #endregion
 
-            calculator -= weapon.Dmage;
+            // 깊은 복사
+            // 객체를 복사 할 때 , 참조 값이 아닌 인스턴스
+            // 자체를 새로 복사하여 서로 다른 메모리를
+            // 생성하는 복사이다.
 
-            calculator(10, 23);
+            IPhone se1 = new IPhone();
+            se1.price = 20000;
+            se1.version = 1;
+
+
+            IPhone se2 = se1.DeepCopy();
+
+            se2.version = 2;
+            se2.price = 30000;
+
+            Console.WriteLine("se1의 버전은 : " + se1.version);
+            Console.WriteLine("se2의 버전은 : " + se2.version);
+
+            Console.WriteLine("se1의 가격 : " + se1.price);
+            Console.WriteLine("se2의 가격 : " + se2.price);
 
         }
     }

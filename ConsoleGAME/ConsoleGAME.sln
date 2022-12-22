@@ -13,7 +13,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "프로퍼티", "프로퍼�
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Constructer", "생성자\Constructer.csproj", "{34E83201-0232-4D9C-A403-134461A50AF5}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "오버라이딩", "오버라이딩\오버라이딩.csproj", "{8F383743-677B-44E7-97FB-4DD0DB49466A}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "오버라이딩", "오버라이딩\오버라이딩.csproj", "{8F383743-677B-44E7-97FB-4DD0DB49466A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "델리게이트", "델리게이트\델리게이트.csproj", "{4FBB21AD-8141-44AD-BA56-6BC3B4D522BF}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -45,6 +47,10 @@ Global
 		{8F383743-677B-44E7-97FB-4DD0DB49466A}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{8F383743-677B-44E7-97FB-4DD0DB49466A}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{8F383743-677B-44E7-97FB-4DD0DB49466A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4FBB21AD-8141-44AD-BA56-6BC3B4D522BF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4FBB21AD-8141-44AD-BA56-6BC3B4D522BF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4FBB21AD-8141-44AD-BA56-6BC3B4D522BF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4FBB21AD-8141-44AD-BA56-6BC3B4D522BF}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
