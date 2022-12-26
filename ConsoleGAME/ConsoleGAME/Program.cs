@@ -11,101 +11,76 @@ using System.Text;
 
 namespace ConsoleGame
 {
-    // 추상 클래스 선언 
-    abstract class Equipment
+    class Machine
     {
-        abstract public void Effect();
 
-        public void Durability(int value)
+        // 형식 매개변수란?
+        // 함수에 형식을 지정하지 않아도 호출 시
+        // 형식만 지정하면 어떤 형식이든 사용할 수 있는 매개변수입니다.
+
+        // 형식 매개변수는 어떤 문자든 가능 
+        // 일반적으로 T를 많이 사용한다.
+        public void Driving<T>(T x)
         {
-            Console.WriteLine("내구도 : " + value);
+            Console.WriteLine($"x의 값 : {x} "); 
 
         }
 
-
-    }
-
-    class Weapon : Equipment
-    {
-        public override void Effect()
+        public T Process<T>(T x)
         {
-            Console.WriteLine("공격력 증가");
-        }
-
-        new public void Durability(int value)
-        {
-            Console.WriteLine("내구도 : " + value);
-
+            Console.WriteLine($"x의 값 : {x} ");
+            return x;
         }
     }
 
-    class Shield : Equipment
+    class STL<T>
     {
-        public override void Effect()
+        public void Push<V>(V x)
         {
-            Console.WriteLine("방어력 증가");
+            Console.WriteLine("Push : " + x);
+        }
+
+        public V Pop<V>(V x)
+        {
+            return x; 
         }
     }
-
-    delegate void CallBack();
-
     internal class Program
     {
-        static void Button(CallBack callBack)
-        {
-            callBack();
-        }
-
-        static void UserInterface()
-        {
-            Console.WriteLine("Character Stat Window0");
-        }
+        
+      
     static void Main(string[] args)
         {
-            #region 추상 클래스란
+            #region 일반화 프로그래밍
             /*
-            // 하나 이상의 추상 메소드를 포함하고 있는 클래스이다.
-            // 추상 클래스는 인스턴스로 생성할 수 없다.
-            // c++ = 순수 가상함수와 동일 (void function() = 0;)
+            // 데이터 형식에 의존하지 않고, 하나의 값이
+            // 여러 데이터 타입ㅇ들을 가질 수 있는 기술에
+            // 중점을 두어 재사용성을 높일 수 있는 프로그래밍 방법이다.
 
-            Weapon weapon = new Weapon();
-            weapon.Effect();
-            weapon.Durability(100);
+            Machine machine = new Machine();
+            machine.Driving(10);
+            machine.Driving(5.8346);
+            machine.Driving('0');
+            machine.Driving("string");
 
-            // 추상 클래스는 다중 상속이 안된다.
-            Shield shield = new Shield();
-            shield.Effect();
+            // 형식 매개변수는 컴파일 시에 자료형을 결정한다
+            // 형식 매개변수의 경우 boxing 과 unboxing 이 일어나지 않는다.
+            int num1 = machine.Process(300);
+            float num2 = machine.Process(20.2f);
+            char num3 = machine.Process('w');
+            string num4 = machine.Process("strng");
             */
+
+            STL<int> stack = new STL<int>();
+            stack.Push(1);
+            stack.Push(2.5f);
+            stack.Push(1);
+
+            stack.Pop(1);
+            stack.Pop(2);
+            stack.Pop(3);
+
             #endregion
-
-
-            // string name;
-
-            // name = Console.ReadLine();
-
-            // Console.WriteLine("name : " + name);
-
-            // string Format( )
-            // 지정된 형식에 따라 개체의 값을 문자열로 변환하여 다른 문자열에 
-            // 삽입하는 메서드이다.
-
-            //(첨자, 맞춤 : 서식 문자열}
-            // string data = string.Format("{0} ,{1}, {2}", 10, 5.59, 'A');
-            // Console.WriteLine(data);
-
-            // 문자열 보간
-            //int damage = 10;
-            //int critical = 33;
-
-            //Console.WriteLine($"{damage} + {critical} = {damage + critical}");
-
-            // 콜백 함수
-            // 다른 함수의 인수로써 넘겨진 후 특정 이벤트에 의해 호출되는 함수
-            // 시스템에 의해 호출 시점이 결정된다
-
-            Button(UserInterface);
-
-
         }
     }
 }
