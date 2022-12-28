@@ -21,7 +21,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "얕은, 깊은 복사", "�
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "추상클래스", "추상클래스\추상클래스.csproj", "{7D6074E7-0B6B-4C8D-A9C3-56767ADD121E}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "일반화 프로그램", "일반화 프로그램\일반화 프로그램.csproj", "{9CE26B29-ABC1-4475-9D08-679C11F1CF1A}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "일반화 프로그램", "일반화 프로그램\일반화 프로그램.csproj", "{9CE26B29-ABC1-4475-9D08-679C11F1CF1A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "콜렉션", "콜렉션\콜렉션.csproj", "{C43C0F5D-6DE4-4EB8-979C-AC71A0C1C147}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -69,6 +71,10 @@ Global
 		{9CE26B29-ABC1-4475-9D08-679C11F1CF1A}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{9CE26B29-ABC1-4475-9D08-679C11F1CF1A}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{9CE26B29-ABC1-4475-9D08-679C11F1CF1A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C43C0F5D-6DE4-4EB8-979C-AC71A0C1C147}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C43C0F5D-6DE4-4EB8-979C-AC71A0C1C147}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C43C0F5D-6DE4-4EB8-979C-AC71A0C1C147}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C43C0F5D-6DE4-4EB8-979C-AC71A0C1C147}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
